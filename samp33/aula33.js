@@ -1,7 +1,7 @@
 const caixaMusicas = document.querySelector("#caixaMusica")
 const musicas = ["Mentalize", "Letting Go", "For Tomorrow", "Rio", "Endeavour", "Holy Land", "Moonlight"]
 const btnSelecioado = document.getElementById("btnMusicaSelecioado")
-let nomeMusica = document.getElementById("nomeMusica")
+const btnRemove = document.getElementById("btnRemoveMusica")
 
 musicas.map((e, i) => {
     const novoElemento = document.createElement("div")
@@ -21,14 +21,32 @@ musicas.map((e, i) => {
     caixaMusicas.appendChild(novoElemento)
 })
 
-btnSelecioado.addEventListener("click", (evt) => {
+const RadioSelecionado=()=>{
     const todosRadios = [...document.querySelectorAll("input[type=radio]")]
-    let radioSeleciodo = todosRadios.filter((e) => {
+    const radioSeleciodo = todosRadios.filter((e) => {
         return e.checked
     })
 
-    radioSeleciodo=radioSeleciodo[0]
-    const musicaSelecioado = radioSeleciodo.parentNode.parentNode.firstChild.textContent
+    return radioSeleciodo[0]
+}
 
-    nomeMusica.value = musicaSelecioado
+btnSelecioado.addEventListener("click", () => {
+    const musicaSelecionada = RadioSelecionado()
+    if (musicaSelecionada != undefined) {
+        const MS = musicaSelecionada.parentNode.parentNode.textContent
+        alert(`Musica Selecionada: ${MS}`)
+    } else {
+        alert("NENHUMA MUSICA SELECIONADA")
+    }
+    
+})
+
+btnRemove.addEventListener("click", () => {
+    const remove = RadioSelecionado()
+    if (remove != undefined) {
+        const removeMusica = remove.parentNode.parentElement
+        removeMusica.remove()
+    } else {
+        alert("NENHUMA MUSICA SELECIONADA")
+    }
 })
