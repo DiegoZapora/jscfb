@@ -39,7 +39,7 @@ let c1 = new Musicas ("Mentalize", "Mentalize")
 c1.Morto()
 c1.setCantor("Andre Matos")
 
-let c2 = new Ritual ("For Tomorrow", "Ritual", true, 50)
+let c2 = new Ritual ("For Tomorrow", "Ritual", true, 0)
 c2.atirar()
 
 console.log(`Nome: ${c1.nome}`)
