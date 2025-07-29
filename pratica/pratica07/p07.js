@@ -96,6 +96,6 @@ btnA.addEventListener("click", () => {
 
 btnR.addEventListener("click", () => {
     bolas.map((e) => {
-        b.remover()
+        b.this.remover()
     })
 })
