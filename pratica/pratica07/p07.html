@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            border: none;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .controles {
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            width: 100%;
+            background-color: #eee;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        .controle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            background-color: #fff;
+            border: 2px solid gray;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+        
+        button {
+            cursor: pointer;
+            background-color: #888;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        input, #numObjetos {
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            width: 150px;
+        }
+
+        .palco {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            min-height: fill-available;
+            min-height: -webkit-fill-available;
+            background-color: #eee;
+            border: 2px solid black;
+            padding: 5px;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .bola {
+            position: absolute;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="controles" class="controles">
+        <div class="controle">
+            <label>Numero de Objetos</label>
+            <p id="numObjetos">0</p>
+        </div>
+        <div class="controle">
+            <label>Quantidade de Objetos</label>
+            <input type="number" value="0" min="0" id="qnt">
+            <button id="btnAdicionar">Adicionar</button>
+        </div>
+        <div class="controle">
+            <button id="btnRemover">Remover Todos</button>
+        </div>
+    </div>
+    <div id="palco" class="palco"></div>
+    <script src="p07.js"></script>
+</body>
+</html>
