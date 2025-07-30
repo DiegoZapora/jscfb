@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+    font: 25px Calibri;
+}
+
+table, th, td {
+    border: solid 2px #888;
+    border-collapse: collapse;
+    padding: 4px 8px;
+    text-align: center;
+}
+
+button {
+    display: none;
+}
