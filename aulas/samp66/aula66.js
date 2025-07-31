@@ -47,3 +47,13 @@ const musicas = [
 musicas.forEach((e) => {
     console.log(`Nome: ${e.nome}, Album: ${e.album}, Cantor: ${e.cantor} ,Tempo da Musica: ${e.tempoMusica}, Baterista: ${e.baterista}`) 
 })
+
+let dados = {
+    nome: "Andre",
+    idade: 47,
+    velho: (bmrp) => {
+        console.log(bmrp)
+    }
+}
+
+dados.velho(dados.idade)
