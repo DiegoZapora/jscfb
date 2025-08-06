@@ -7,29 +7,59 @@ const carro = document.getElementById("carro")
 const branco = document.getElementById("branco")
 
 const inicio = () => {
-    carro.style.position = "relative"
-    carro.style.left = "0px"
-    carro.style.top = "0px"
+    carro.style = "position: relative; left: 0px; width: 100px; top: 0px"
 
     branco.style.left = "68px"
     branco.style.top = "5px"
+
+    tamMax = window.innerWidth - parseInt(carro.style.width)
+    tamMaxY = window.innerHeight - parseInt(carro.style.top)
 }
 
 let audio = new Audio("assets/carro (1).mp3")
 let freio = new Audio("assets/carro (2).mp3")
+let batida = new Audio("assets/carri.mp3")
 
 let anima = null
+let tamMax = null
+let tamMaxY = null
 
 const  mover = (dir) => {
-    let posD = parseInt(carro.style.left) 
-    posD = posD + (10*dir)
-    carro.style.left = `${posD}px`
+    if (dir > 0) {
+        if (parseInt(carro.style.left) <= tamMax) {
+            carro.style.left = parseInt(carro.style.left) + (10*dir) +"px"
+            anima = setTimeout(mover, 20, dir)
+        } else {
+            clearTimeout(anima)
+        }
+    }else if (dir < 0) {
+        if (parseInt(carro.style.left) >= 0) {
+            carro.style.left = parseInt(carro.style.left) + (10*dir) +"px"
+            anima = setTimeout(mover, 20, dir)
+        } else {
+            clearTimeout(anima)
+        }
+    }
 }
 
 const moverY = (dirY) => {
-    let posY = parseInt(carro.style.top)
-    posY = posY + (10*dirY)
-    carro.style.top = `${posY}px`
+    if (dirY > 0) {
+        if (parseInt(carro.style.top) <= tamMaxY) {
+            carro.style.top = parseInt(carro.style.top) + (10*dirY) +"px"
+            anima = setTimeout(moverY, 20, dirY) 
+        } else {
+            clearTimeout(anima)
+        }
+    }
+
+    if (dirY < 0) {
+        if (parseInt(carro.style.top) >= 0) {
+            carro.style.top = parseInt(carro.style.top) + (10*dirY) +"px"
+            anima = setTimeout(moverY, 20, dirY) 
+        } else {
+            clearTimeout(anima)
+        }
+    }
 }
 
 window.addEventListener("keypress", (d) => {
@@ -55,8 +85,8 @@ window.addEventListener("keypress", (w) => {
 btnD.addEventListener("click", () => {
     freio.pause()
     audio.play()
-    clearInterval(anima)
-    anima = setInterval(mover, 20, +1)
+    clearTimeout(anima)
+    mover(+1)
     branco.style.left = "68px"
     branco.style.top = "5px"
     branco.style.width = "20px"
@@ -68,8 +98,8 @@ btnD.addEventListener("click", () => {
 btnE.addEventListener("click", () => {
     freio.pause()
     audio.play()
-    clearInterval(anima)
-    anima = setInterval(mover, 20, -1)
+    clearTimeout(anima)
+    mover(-1)
     branco.style.left = "10px"
     carro.style.width = "100px"
     carro.style.height = "40px"
@@ -79,7 +109,7 @@ btnE.addEventListener("click", () => {
 })
 
 btnP.addEventListener("click", () => {
-    clearInterval(anima)
+    clearTimeout(anima)
     audio.pause()
     freio.play()
 })
@@ -87,8 +117,8 @@ btnP.addEventListener("click", () => {
 btnB.addEventListener("click", () => {
     freio.pause()
     audio.play()
-    clearInterval(anima)
-    anima = setInterval(moverY, 20, +1)
+    clearTimeout(anima)
+    moverY(+1)
     carro.style.width = "45px"
     carro.style.height = "100px"
     branco.style.top = "70px"
@@ -100,8 +130,8 @@ btnB.addEventListener("click", () => {
 btnC.addEventListener("click", () => {
     freio.pause()
     audio.play()
-    clearInterval(anima)
-    anima = setInterval(moverY, 20, -1)
+    clearTimeout(anima)
+    moverY(-1)
     branco.style.top = "10px"
     branco.style.left = "7px"
     carro.style.width = "45px"
@@ -111,3 +141,11 @@ btnC.addEventListener("click", () => {
 })
 
 window.addEventListener("load", inicio())
+
+window.addEventListener("resize", () => {
+    tamMax = window.innerWidth - parseInt(carro.style.width)
+})
+
+window.addEventListener("resize", () => {
+    tamMaxY = window.innerHeight - parseInt(carro.style.width)
+})
