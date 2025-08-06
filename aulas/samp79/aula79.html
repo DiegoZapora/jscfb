@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            background-color: black;
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 98vw;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            background-color: white;
+            border: none;
+            color: black;
+        }
+
         .carro {
             background-color: red;
             width: 100px;
@@ -13,6 +31,20 @@
             padding: 0px;
             margin-top: 10px;
             border-radius: 10px;
+            display: flex;
+        }
+
+        #branco {
+            width: 20px;
+            height: 30px;
+            position: relative;
+            left: 68px;
+            top: 5px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.644);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -20,11 +52,15 @@
     <div>
         <button id="btnEsquerda">&larr;</button>
         <button id="btnParar">Parar</button>
-        <button id="btnDireita">&rarr;</button>
+        <button id="btnDireita">&rarr;</button> <br>
+        <button id="btnBaixo">&darr;</button>
+        <button id="btnCima">&uarr;</button>
     </div>
-    <div id="carro" class="carro">
-
-    </div>
+    <section>
+        <div id="carro" class="carro">
+            <div id="branco"></div>
+        </div>
+    </section>
 
     <script src="aula79.js"></script>
 </body>
