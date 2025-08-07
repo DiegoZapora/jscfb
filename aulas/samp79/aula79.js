@@ -7,6 +7,7 @@ const branco = document.getElementById("branco")
 const outro = document.getElementById("outro")
 const divTempo = document.getElementById("tempo")
 const score = document.getElementById("score")
+const plano = document.getElementById("plano")
 
 const inicio = () => {
     carro.style = "position: relative; left: 0px; width: 100px; top: 0px"
