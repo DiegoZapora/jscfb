@@ -7,6 +7,16 @@
     <style>
         * {
             background-color: black;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .samp {
+            width: 100vw;
+            height: 100vh;
+            max-height: 100%;
+            overflow: hidden;
         }
 
         button {
@@ -44,19 +54,52 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+
+        .outro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: auto;
+            font-size: 3em;
+            color: red;
+        }
+
+        .sus {
+            border: 2px solid white;
+            padding: 10px;
+        }
+
+        #tempo {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            text-align: end;
+            font-size: large;
+        }
+
+        #score {
+            font-size: 2em;
+            color: blue;
+        }
     </style>
 </head>
 <body>
     <section class="samp">
-        <div>
+        <div class="sus">
             <button id="btnEsquerda">Esquerda</button>
-            <button id="btnParar">Parar</button>
+            <button id="btnCima">Cima</button>
             <button id="btnDireita">Direita</button> <br>
             <button id="btnBaixo">Baixo</button>
-            <button id="btnCima">Cima</button>
+            <div id="tempo">Score: 0</div>
         </div>
         <div id="carro" class="carro">
             <div id="branco"></div>
+        </div>
+        <div id="outro" class="outro" style="display: none;">
+                <h1>GAME OVER!</h1>
+                <h2 id="score">Score: </h2>
         </div>
     </section>
     <script src="aula79.js"></script>
