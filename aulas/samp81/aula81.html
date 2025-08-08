@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            border: none;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        #info {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .quadrado {
+            display: flex;
+            width: 100px;
+            height: 100px;
+        }
+
+        #q1 {
+            background-color: red;
+        }
+
+        #q2 {
+            background-color: blue;
+        }
+        
+        .samp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <p id="posx">PosX</p>
+        <p id="posy">PosY</p>
+        <p id="largura">Largura:</p>
+        <p id="altura">Altura</p>
+    </div>
+    <article class="samp">
+        <div id="q1" class="quadrado"></div>
+        <div id="q2" class="quadrado"></div>
+    </article>
+    <script src="aula81.js"></script>
+</body>
+</html>
