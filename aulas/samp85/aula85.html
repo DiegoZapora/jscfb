@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .invalido {
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        Nome: <input type="text" id="inpNome" minlength="4" maxlength="8" required>
+        Nota: <input type="number" id="inpNota" min="0" max="10" required>
+        <button id="btnValidar">Validar</button>
+        <p id="res"></p>
+    </form>
+    <script src="samp85.js"></script>
+</body>
+</html>
