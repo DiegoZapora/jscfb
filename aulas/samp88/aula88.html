@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="grafico1" style="width: auto; max-width: 100vw; height: auto;"></canvas>
+    <script>
+        const ctx = document.getElementById("grafico1");
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: ['Time to be Free', 'A New Moonlight', 'Mentalize', 'Mirror of Me', 'On Our Own', 'Light Years', 'Liberty'],
+            datasets: [{
+                label: 'Musicas do Andre',
+                data: [20, 19, 3, 5, 2, 3, 5],
+                borderWidth: 2
+            }]
+            },
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+            }
+        });
+    </script>
+</body>
+</html>

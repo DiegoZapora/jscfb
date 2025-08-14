@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="grafico1"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById("grafico1");
+        let valores = [0,0,0]
+
+        let grafico = new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: ["Disponibilidade", "Qualidade", "Performance"],
+            datasets: [{
+                label: '# of Votes',
+                data: valores,
+                borderWidth: 1
+            }]
+            },
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+            }
+        });
+
+        const obterDados = () => {
+            const endPoint = "api.json"
+            fetch(endPoint)
+            .then(res => res.json())
+            .then(ret => {
+                console.log(ret)
+                valores[0] = ret.disponibilidade
+                valores[1] = ret.qualidade
+                valores[2] = ret.performance
+                grafico.update()
+            })
+        }
+
+        let intervalo = setInterval(obterDados, 3000)
+    </script>
+</body>
+</html>

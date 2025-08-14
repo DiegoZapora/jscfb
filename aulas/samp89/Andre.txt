@@ -1,0 +1,5 @@
+{
+	"nome": "Andre Matos",
+	"album": "Mentalize",
+	"musica": "I Will Return"
+}
