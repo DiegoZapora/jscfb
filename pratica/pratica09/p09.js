@@ -64,7 +64,7 @@ const carregaParcial = () => {
     let salvo = localStorage.getItem("parcial")
     salvo.length
     console.log(salvo)
-    if (salvo.length === 0) {
+    if (salvo.length === null) {
         parcialSalva.innerHTML = "Nenhuma Parcial Salva."
     }
     parcialSalva.append(salvo)
