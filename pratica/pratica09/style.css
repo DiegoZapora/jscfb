@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#timer {
+    background-color: #333;
+    color: greenyellow;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    padding: 10px 20px;
+    justify-content: center;
+    width: 250px;
+    height: 75px;
+    border-radius: 10px;
+    border: 5px solid #888;
+}
+
+#controles {
+    width: 100vw;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 255, 0.753), rgba(137, 43, 226, 0.781)); 
+}
+
+#controles button {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#controles button:hover {
+    scale: 1.1;
+    transition: 1.2s;
+}
+
+#container {
+    width: 100vw;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(137, 43, 226, 0.781), rgba(0, 0, 255, 0.753)); 
+}
+
+#btnIniciar {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+#btnParar {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+#btnZerar {
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+}
+
+#btnParcial {
+    background-color: rgba(0, 0, 255, 0.664);
+    color: white;
+    font-weight: bold;
+}
+
+#parcial {
+    width: 100vw;
+    height: 40vh;
+    text-align: center;
+    background-image: linear-gradient(to top, rgba(0, 0, 255, 0.753), rgba(137, 43, 226, 0.781)); 
+}
+
+#parcial p {
+    margin-bottom: 5px;
+}
+
+.parcial{
+    font-weight: bold;
+    color: white;
+    font-size: 1.5em;
+}
+
+#parcialSalva {
+    color: green;
+    font-weight: bold;
+    height: 40px;
+    width: 180px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
