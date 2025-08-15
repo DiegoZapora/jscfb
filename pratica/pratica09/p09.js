@@ -57,11 +57,14 @@ btnParcial.addEventListener("click", () => {
 })
 
 const salvaParcial = () => {
-    localStorage.setItem("parcial", parical),"Nenhuma Parcial Salva"
+    localStorage.setItem("parcial", parical)
 }
 
 const carregaParcial = () => {
     let salvo = localStorage.getItem("parcial")
+    if (salvo.length === 0) {
+        parcialSalva.innerHTML = "Nenhuma Parcial Salva."
+    }
     parcialSalva.append(salvo)
 }
 
