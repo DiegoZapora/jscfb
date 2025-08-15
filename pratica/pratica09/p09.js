@@ -4,7 +4,7 @@ const btnP = document.getElementById("btnParar")
 const btnZ = document.getElementById("btnZerar")
 const caixaParcial = document.getElementById("parcial")
 const btnParcial = document.getElementById("btnParcial")
-const parcialSalva = document.getElementById("parcialSalva")
+let parcialSalva = document.getElementById("parcialSalva")
 
 let intervalo = null
 let atual = null
