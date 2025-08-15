@@ -66,8 +66,9 @@ const carregaParcial = () => {
     console.log(salvo)
     if (salvo.length === null) {
         parcialSalva.innerHTML = "Nenhuma Parcial Salva."
+    } else {
+        parcialSalva.append(salvo)
     }
-    parcialSalva.append(salvo)
 }
 
 carregaParcial()
