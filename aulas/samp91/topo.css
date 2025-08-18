@@ -1,0 +1,33 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.topo {
+    width: 100vw;
+    height: 250px;
+    background-color: blueviolet;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.logo img {
+    width: 170px;
+    border-radius: 15px;
+}
+
+.logo h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #99A9FE;
+    font-weight: bold;
+}
