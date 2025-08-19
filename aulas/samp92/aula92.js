@@ -1,13 +1,11 @@
+import {Caixa} from './mostrar.js'
 const config = {
-    titulo: 'Andre Matos',
-    texto: "Maestro do Heavy Metal",
-    cor: "rgb(153, 169, 254)"
+    cor: "#48f",
+    tipo: "ok",
 }
-
-let c1 = new Caixa(config)
 
 const btnM = document.getElementById("btnMostrar")
 
 btnM.addEventListener("click", () => {
-    c1.mostrarCX()
+    Caixa.mostrarCX(config, "Filme", "Gostaria de alugar esse filme?")
 })
