@@ -1,4 +1,6 @@
-import {Login} from "./login.js";
+const inpN = document.getElementById("inpNome")
+const inpS = document.getElementById("inpSenha")
+const btnL = document.getElementById("btnLogin")
 
 let logado = false
 let matlogado = null
@@ -19,8 +21,14 @@ const login = (mat, pas) => {
             console.log(res)
         } else {
             console.log("Usuario ou Senha não encontrados.")
+            return
         }
     })
 }
 
-login("andre", "matos")
+btnL.addEventListener("click", () => {
+    let nome = inpN.value
+    let senha = inpS.value
+
+    login(nome, senha)
+})
