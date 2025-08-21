@@ -22,17 +22,13 @@ class Caixa {
             left: 0px;
             width: 100%;
             height: 100vh;
-            background-color: rgba(0,0,0,0.7);`
+            background-color: rgba(0,0,0,0.7);
+            z-index: 99999999999;`
         this.divMsg.setAttribute("id", "divMsg")
         this.divMsg.setAttribute("style", estilosDivMSG)
         this.destino.prepend(this.divMsg)
 
         const caixaMSG = document.createElement("div")
-        const mostrarP = () => {
-            let p = document.createElement("p")
-            p.innerHTML = "FILME ALUGADO"
-            caixaMSG.appendChild(p)
-        }
         const caixaMsgEstilo = 
             `display: flex;
             justify-content: flex-start;
@@ -74,15 +70,12 @@ class Caixa {
         caixaMSG.appendChild(caixaTexto)
 
         const caixaFooter = document.createElement("div")
-        const btnSim = document.createElement("button")
-        btnSim.innerHTML = "SIM"
         const btnNao = document.createElement("button")
-        btnNao.innerHTML = "NÃO"
-        caixaFooter.appendChild(btnSim)
+        btnNao.innerHTML = "Ok"
         caixaFooter.appendChild(btnNao)
         const caixaFooterEstilo = 
             `display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             width: 100%;
             height: 40px;
@@ -99,14 +92,9 @@ class Caixa {
             border: 1px solid black;
             border-radius: 5px;`
         caixaFooter.setAttribute("style", caixaFooterEstilo)
-        btnSim.setAttribute("style", btnEstilo)
         btnNao.setAttribute("style", btnEstilo)
         btnNao.addEventListener("click", () => {
             this.ocultarCX()
-        })
-        btnSim.addEventListener("click", () => {
-            mostrarP()
-            setTimeout(this.ocultarCX, 1500)
         })
         caixaMSG.appendChild(caixaFooter)
     }
