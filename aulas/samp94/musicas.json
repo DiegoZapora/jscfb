@@ -1,0 +1,43 @@
+[
+    {
+        "id": "01",
+        "musica": "Mentalize",
+        "album": "Mentalize",
+        "cantor": "Andre Matos"
+    },
+
+    {
+        "id": "02",
+        "musica": "Time to be Free",
+        "album": "Time to be Free",
+        "cantor": "Andre Matos"
+    },
+
+    {
+        "id": "03",
+        "musica": "To Live Again",
+        "album": "Threate of Fate",
+        "cantor": "Andre Matos"
+    },
+
+    {
+        "id": "04",
+        "musica": "Nightmares",
+        "album": "Soldiers of Sunrise",
+        "cantor": "Andre Matos"
+    },
+
+    {
+        "id": "05",
+        "musica": "Blind Spell",
+        "album": "Ritual",
+        "cantor": "Andre Matos"
+    },
+
+    {
+        "id": "06",
+        "musica": "Reason",
+        "album": "Reason",
+        "cantor": "Andre Matos"
+    }
+]
